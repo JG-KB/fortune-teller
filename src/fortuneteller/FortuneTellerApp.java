@@ -19,92 +19,133 @@ public class FortuneTellerApp {
 		String userLastName = input.nextLine();
 		System.out.println("What is your age? ");
 		int userAge = input.nextInt();
+		String retirement;
 		if ((userAge % 2 == 0)) {
-			System.out.println("You will retire in 10 years");
-		} else 
-			System.out.println("You will retire in 15 years");
+			retirement = "7 years";
+		} else
+			retirement = "11 years";
+
+		System.out.println("What is your birth month number 1-12? ");
+
+		int birthMonth = input.nextInt();
+		String bankAccount = " ";
+		if (birthMonth > 0 && birthMonth <= 4) {
+			bankAccount = "10,000,000 dollars";
+		}
+		else if (birthMonth>4 && birthMonth<=9) {
+			 bankAccount= "5,000,000 dollars";
+		}
+		else if (birthMonth>9 && birthMonth<=12) {
+			bankAccount= "1,000,000 dollars";
 		
+		}else  
+			bankAccount= "0.00 dollars";
 
-		System.out.println("What is your birth month number 1 -12? ");
 
-		String birthMonth = input.next();
-		 switch (birthMonth) {
-		 case "1" :
-		 case "2" :
-		 case "3" :
-		 case "4" :
-			 System.out.println (" Your bank account will be  10,000,000 dollars.");
-			 break;
-		 case "5" :
-		 case "6" :
-		 case "7" :
-		 case "8" :
-			 System.out.println( " Your bank account will be 5,000,000 dollars.");
-			 break;
-		 case "9" :
-		 case "10" :
-		 case "11" :
-		 case "12" :
-			 System.out.println( " Your bank account will be 1,000,000 dollars.");
-			 break;
-			 default:
-				 System.out.println( " I'm sorry, you will have 0.00 dollars");
-			 
-		 }
+		System.out.println("What is your favorite color from the ROYGBIV colors? If you don't know what the ROYGBIV colors are type in help and I will tell you. ");
 
-		System.out.println("What is your favorite color from the ROYGBIV colors? ");
+		String favRoygbivColor = input.next().toLowerCase();
+		String favColor = favRoygbivColor.toLowerCase();
+		if (favRoygbivColor.equals("help")) {
+			System.out.println(" The ROYGBIV colors are Red, Orange, Yellow, Green, Blue, Indigo, Violet");
+		}
+		String car = " ";
 
-		String favRoygbivColor = input.next();
-		 switch( favRoygbivColor) {
-		 case "red" : System.out.println( "You will have a Jeep");
-		 break;
-		 
-		 case "orange" : System.out.println( "You will have a Elephant");
-			 break;
-		 case "yellow" : System.out.println( "You will have a Ford Mustang");
-		 break;
-			 
-		 case "green" : System.out.println( "You will have a private jet");
-		 break;
-			 
-		 case "blue" : System.out.println( "You will have a telsa teleporter");
-		 break;
-			 
-		 case "indigo" : System.out.println( "You will have a Rick and Morty portal gun");
-		 break;
-			 
-		 case "violet" : System.out.println( "You will have a jetpack");
-		 break;
-			 
-		 }
+		switch (favColor) {
+		case "red":
+			car = "a Jeep";
+			break;
 
-		System.out.println("How many siblings do you have number format");
+		case "orange":
+			car = "a Elephant";
+			break;
+		case "yellow":
+			car = "a Ford Mustang";
+			break;
+
+		case "green":
+			car = "a private jet";
+			break;
+
+		case "blue":
+			car = "a Telsa HyperLoop";
+			break;
+
+		case "indigo":
+			car = "a Rick and Morty portal gun";
+			break;
+
+		case "violet":
+			car = "a jetpack";
+			break;
+
+		case "help":
+			car = "a ROYGBIV GITBACK TRYAGAINATRON";
+		default:
+		}
+
+		System.out.println("How many siblings do you have in number format?");
 
 		int siblingsNum = input.nextInt();
-		input.nextLine();
-		String vactionHouse = "";
-		switch ( siblingsNum) { 
-		case 0: 
-			vactionHouse= "Hamburg, Germany";
-		break;
-		case 1: 
-			vactionHouse= "Helsinki, Finland";
-		break;
-		case 2:
-			vactionHouse = " Toronto, Canada";
-		break;
-		
-//		case 3:
-//			vactionHouse="Vienna, Austria";
-//		break;
-//		case (<3): 
-//			vactionHouse=" Marrakesh, Morocco";
-//		break;
-//		case  >0: 
-//			vactionHouse=" The Ice Wall";
-//		
-//				
+		String vacationLand = " ";
+
+		if (siblingsNum == 0) {
+			vacationLand = "Mar's City, Mars";
+		} else if (siblingsNum == 1) {
+			vacationLand = "Hamburg, Germany";
+		} else if (siblingsNum == 2) {
+			vacationLand = "Helsinki, Finland";
+		} else if (siblingsNum == 3) {
+			vacationLand = "Toronto, Canada";
+		} else if (siblingsNum > 3) {
+			vacationLand = "Marrakesh, Morocco";
+
+		} else {
+			vacationLand = "on The Ice Wall of Westeros.";
 		}
-		}
+
+		System.out.println("*[" + userFirstName + "]*" + " " + "*[" + userLastName + "]*" + " will retire in " + "*["
+				+ retirement + "]*" + "" + " with " + "*[" + bankAccount + "]*" + " in the bank, "
+				+ "a vacation home in " + "*[" + vacationLand + "]*," + "and travel by " + "*[" + car + "]*.");
+
 	}
 
+}
+
+
+//wanted to show you this also
+//String birthMonth = input.next();
+//String bankAccount = " ";
+//switch (birthMonth) {
+//case "1":
+//	bankAccount = " Your bank account will be  10,000,000 dollars.";
+//case "2":
+//	bankAccount = " Your bank account will be  10,000,000 dollars.";
+//case "3":
+//	bankAccount = " Your bank account will be  10,000,000 dollars.";
+//case "4":
+//	bankAccount = " Your bank account will be  10,000,000 dollars.";
+//	bankAccount = "10,000,000 dollars";
+//	break;
+//case "5":
+//	bankAccount = " Your bank account will be 5,000,000 dollars.";
+//case "6":
+//	bankAccount = " Your bank account will be 5,000,000 dollars.";
+//case "7":
+//	bankAccount = " Your bank account will be 5,000,000 dollars.";
+//case "8":
+//	bankAccount = " Your bank account will be 5,000,000 dollars.";
+//	bankAccount = "5,000,000 dollars";
+//	break;
+//case "9":
+//	bankAccount = " Your bank account will be 1,000,000 dollars.";
+//case "10":
+//	bankAccount = " Your bank account will be 1,000,000 dollars.";
+//case "11":
+//	bankAccount = " Your bank account will be 1,000,000 dollars.";
+//case "12":
+//	bankAccount = " Your bank account will be 1,000,000 dollars.";
+//	bankAccount = "1,000,000 dollars";
+//	break;
+//default:
+//	bankAccount = "0.00 dollars";
